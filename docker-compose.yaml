@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  app1:
+    container_name: app1
+    image: app1
+    build: ./app1
+    ports:
+    - target: 5000
+      published: 5000
+    depends_on: 
+    - app2
+
+  app2:
+    container_name: app2
+    image: app2
+    build: ./app2
+    ports:
+    - target: 5001
+      published: 5001
+    
+
